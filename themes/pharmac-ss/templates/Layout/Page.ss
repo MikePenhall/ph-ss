@@ -1,9 +1,15 @@
-<% include SideBar %>
-<div class="content-container unit size3of4 lastUnit">
-	<article>
-		<h1>$Title</h1>
-		<div class="content">$Content</div>
-	</article>
+<div class="row">
+	<div class="span3">
+		<% include SidebarNav %>
+	</div>
+	<section class="span9">
+		<header class="page-header subhead">
+			<% include PrintShare %>
+			<h1><span class="hidden">$SiteConfig.Title | </span>$Title</h1>
+		</header>
+		$Breadcrumbs
+		$Content
 		$Form
 		$PageComments
+	</section>
 </div>
