@@ -5,6 +5,7 @@
 		"php": ">=5.3.2",
 		"silverstripe/cms": "3.0.*@stable",
 		"silverstripe/framework": "3.0.*@stable",
+		"silverstripe/express": "dev-master",
 		"silverstripe-themes/simple": "*",
 		"silverstripe/postgresql": "*",
 		"silverstripe/compass": "dev-master"

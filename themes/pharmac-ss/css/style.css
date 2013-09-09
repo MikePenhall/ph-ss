@@ -1,0 +1,10 @@
+/* Mike's overrides for conversion to Silverstripe */
+
+.header-wrapper .main nav .nav-global{
+	margin-top:-40px;
+}
+
+.not-sticky-footer,
+div.main{
+	min-height:1px;
+}
