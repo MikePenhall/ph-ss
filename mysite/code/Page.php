@@ -7,6 +7,10 @@ class Page extends SiteTree {
 	public static $has_one = array(
 	);
 
+	public function LowerCase($string = null){
+		return Convert::raw2url(trim($string));
+	}
+
 }
 class Page_Controller extends ContentController {
 
@@ -31,13 +35,17 @@ class Page_Controller extends ContentController {
 	public function init() {
 		parent::init();
 
-		// Note: you should use SS template require tags inside your templates 
-		// instead of putting Requirements calls here.  However these are 
-		// included so that our older themes still work
 		Requirements::themedCSS('reset');
-		Requirements::themedCSS('layout'); 
-		Requirements::themedCSS('typography'); 
-		Requirements::themedCSS('form'); 
+		Requirements::themedCSS('bootstrap');
+		Requirements::themedCSS('bootstrap-responsive');
+		Requirements::themedCSS('layout');
+		Requirements::themedCSS('typography');
+		Requirements::themedCSS('form');
+		Requirements::themedCSS('loader');
+		Requirements::themedCSS('application');
+		Requirements::themedCSS('style');
+
+		Requirements::javascript('themes/pharmac/javascript/vendor/modernizr.js');
 	}
 
 }
