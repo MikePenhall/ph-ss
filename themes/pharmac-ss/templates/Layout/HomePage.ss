@@ -1,3 +1,4 @@
+<% include SearchForm %>
 <div class="row">
 	<section class="span9">
 		<header class="page-header subhead">
