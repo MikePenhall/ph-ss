@@ -7612,8 +7612,8 @@ header.main nav {
 }
 nav.main,
 .nav-primary-wrapper {
-  z-index: 10;
-  position: relative;
+ /*  z-index: 10;
+ position: relative;*/ /* MP */
 }
 section.main,
 section.container {

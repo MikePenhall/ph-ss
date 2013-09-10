@@ -112,7 +112,7 @@ body {
 	}
 	.main {
 	    background: #fff;
-	    padding: 40px 0 60px;
+	    padding: 40px 0 0px;/* MP */
 /*	    min-height: 300px;*/ /* MP */
 	}
 	.inner {
@@ -133,7 +133,7 @@ body {
 	.no-sidebar .sidebar {
 		display: none;
 	}
-daffa
+
 /* HEADER */
 .header {
     background: #161616;

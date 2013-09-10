@@ -4,9 +4,11 @@
 			<% include PrintShare %>
 			<h1><span class="hidden">$SiteConfig.Title | </span>$Title</h1>
 		</header>
-		$Breadcrumbs
-		$Content
-		$Form
-		$PageComments
+		<div class="main-content">
+			$Breadcrumbs
+			$Content
+			$Form
+			$PageComments
+		</div>
 	</section>
 </div>

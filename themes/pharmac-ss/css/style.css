@@ -1,10 +1,38 @@
 /* Mike's overrides for conversion to Silverstripe */
+.wrapper{
+	width:960px;
+	margin: 0 auto;
+}
 
-.header-wrapper .main nav .nav-global{
+/* Navigation */
+.header-wrapper .main nav .nav-global,
+.nav-primary
+{
 	margin-top:-40px;
+}
+
+nav.main{
+	z-index:0;
+}
+
+section.main{
+	z-index:10;
 }
 
 .not-sticky-footer,
 div.main{
 	min-height:1px;
 }
+
+.main-content{
+	min-height:200px;
+}
+
+
+/* Search From */
+.search-home{
+	margin-top:-40px;
+}
+
+/* Footer */
+

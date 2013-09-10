@@ -2,7 +2,7 @@
   <h1>How can we help you?</h1>
   <p>Ask a question, enter a word or describe a health condition</p>
 
-  <form $FormAttributes class="form-search pad2" target="_top">
+  <form $FormAttributes class="form-search pad7" target="_top">
     <input type="search" class="search input-large search-query span2" name="Search" id="SearchForm_SearchForm_Search" accesskey="3" value="$SearchQuery">
     <div class="radio-group update-action form-inline" data-field="search_q" name="">
       <label class="radio inline"><input name="search_path" type="radio" data-field-name="search_q" value="/search" data-target="_top" checked="">Site content</label>
