@@ -1,30 +1,27 @@
 require 'capistrano/ext/multistage'
 
-set :application, "DSG"
-set :repository,  "git@github.com:3months/cmi-site.git"
+set :application, "pharmac.silverstripe.3months.com"
+set :repository,  "git@github.com:MikePenhall/ph-ss.git"
 set :branch, "master"
 
 set :scm, :git
 set :deploy_via, :copy
-# set :git_shallow_clone, 1 #comment out if deploying via a branch other than master
+set :git_shallow_clone, 1 #comment out if deploying via a branch other than master
 set :copy_exclude, [".gitignore", "config", "vendor", "framework", "CMS", "assets", ".htaccess", "_ss_environment.php", ".rvmrc", "shared", "buildtools", "docsviewer", "testsession", "installer", "blog", "widgets", "comments", "postgresql"]
 set :port, 22
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "103.6.212.52"                          # Your HTTP server, Apache/etc
-role :app, "103.6.212.52"                          # This may be the same as your `Web` server
+role :web, "74.50.59.74"                          # Your HTTP server, Apache/etc
+role :app, "74.50.59.74"                          # This may be the same as your `Web` server
 #role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 set :user, "threemonths"
 set :use_sudo, false
 
-set :stages, %w(staging production)
-set :default_stage, 'staging'
-
-set :deploy_to, "/home/#{user}/apps/#{application}_staging"
+set :deploy_to, "/home/#{user}/apps/#{application}"
 set :keep_releases, 20
 
 after "deploy:update_code", "setup:dev_build", "deploy:cleanup"
@@ -47,7 +44,6 @@ namespace :setup do
     run "ln -s #{shared_path}/_config.php #{release_path}/mysite/_config.php"
     run "ln -s #{shared_path}/_htaccess #{release_path}/.htaccess"
     run "ln -s #{shared_path}/assets #{release_path}/assets"
-    run "ln -s #{shared_path}/sendgrid-php #{release_path}/sendgrid-php"
   end
 
   task :create_cache_dirs, :except =>{:no_release => true} do
@@ -69,7 +65,7 @@ namespace :setup do
   task :make_directories_writable_for_compass, :except => {:no_release => true} do
     run "chmod -R 777 #{release_path}/cms"
     run "chmod -R 777 #{release_path}/framework"
-    run "chmod -R 777 #{release_path}/themes/dsg/css"
+    run "chmod -R 777 #{release_path}/themes/pharmac-ss/css"
   end
 end
 
